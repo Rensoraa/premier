@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just Vibes — VALORANT Premier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="image.png">
+</head>
+<body>
+
+<!-- ─── LOADER ──────────────────────────────────────────── -->
+<div id="loader">
+  <div class="loader-logo-wrap">
+    <div class="loader-ring"></div>
+    <div class="loader-ring"></div>
+    <div class="loader-logo-placeholder">
+      <img src="image.png" alt="Just Vibes Logo">
+    </div>
+  </div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">Loading</div>
+</div>
+
+<!-- ─── NAV ─────────────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">
+      <img src="image.png" alt="Logo">
+    </div>
+    Just Vibes
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#matches">Matches</a></li>
+    <li><a href="#roster">Roster</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-eyebrow">EU DACH — Division 6</div>
+
+  <div class="hero-logo-slot">
+    <img src="image.png" alt="Just Vibes Logo">
+  </div>
+
+  <h1 class="hero-title">
+    <span class="line-white">Just </span>
+    <span class="line-orange">Vibes</span>
+  </h1>
+
+  <div class="hero-divider"></div>
+
+  <p class="hero-desc">
+    A premier squad built on good energy and sharp execution.
+    We compete in EU DACH Division 6 - calm heads, clean plays.
+  </p>
+
+  <div class="hero-cta">
+    <a href="#roster" class="btn-primary">Meet the Team</a>
+    <a href="#matches" class="btn-outline">Our Matches</a>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ─── ABOUT ────────────────────────────────────────────── -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-heading">Built for<br><span style="color:var(--orange)">good vibes.</span></h2>
+    <p class="about-text">
+      Just Vibes is a VALORANT Premier team competing in the EU DACH conference.
+      We're here to play well, play together, and have fun doing it - without 
+      sacrificing results.
+    </p>
+    <p class="about-text">
+      Division 6. Growing every match. The tag is #Vibes - the mentality is everything.
+    </p>
+
+    <div class="about-stats" id="aboutStats">
+      <!-- Filled by JS from API -->
+      <div class="stat-box"><div class="stat-num">—</div><div class="stat-label">Wins</div></div>
+      <div class="stat-box"><div class="stat-num">—</div><div class="stat-label">Losses</div></div>
+      <div class="stat-box"><div class="stat-num">—</div><div class="stat-label">Points</div></div>
+    </div>
+  </div>
+
+  <div class="about-visual reveal" style="transition-delay:0.15s">
+    <div class="about-badge">
+      <div class="badge-title">EU DACH<br>Division 6</div>
+      <div class="badge-sub">
+        Enrolled in VALORANT Premier, competing across the EU DACH conference.
+        No game is lost until the last round is played - we're here to vibe. and learn from every match.
+      </div>
+      <div>
+        <span class="badge-tag">VALORANT</span>
+        <span class="badge-tag">Premier</span>
+        <span class="badge-tag">EU DACH</span>
+        <span class="badge-tag">Div 6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MATCHES ───────────────────────────────────────────── -->
+<section id="matches">
+  <div class="matches-header reveal">
+    <div class="section-label" style="justify-content:center">Premier Season</div>
+    <h2 class="section-heading">Match <span style="color:var(--orange)">Results</span></h2>
+  </div>
+
+  <!-- Standing summary from API -->
+  <div class="standing-card reveal" id="standingCard">
+    <div class="standing-stat"><div class="big" id="st-points">—</div><div class="lbl">Points</div></div>
+    <div class="standing-stat"><div class="big" id="st-place">—</div><div class="lbl">Conference Place</div></div>
+    <div class="standing-stat"><div class="big" id="st-wins">—</div><div class="lbl">Wins</div></div>
+    <div class="standing-stat"><div class="big" id="st-losses">—</div><div class="lbl">Losses</div></div>
+    <div class="standing-stat"><div class="big" id="st-rw">—</div><div class="lbl">Rounds Won</div></div>
+    <div class="standing-stat"><div class="big" id="st-rl">—</div><div class="lbl">Rounds Lost</div></div>
+  </div>
+
+  <div class="matches-grid" id="matchesGrid">
+    <p style="color:var(--gray);font-size:14px;letter-spacing:1px" id="matches-note">
+      Fetching match data…
+    </p>
+  </div>
+</section>
+
+<!-- ─── ROSTER ────────────────────────────────────────────── -->
+<section id="roster">
+  <div class="roster-header reveal">
+    <div class="section-label" style="justify-content:center">The Lineup</div>
+    <h2 class="section-heading">Meet the <span style="color:var(--orange)">Roster</span></h2>
+  </div>
+
+  <div class="roster-grid" id="rosterGrid"></div>
+
+  <p style="text-align:center;margin-top:32px;font-size:13px;color:var(--gray);letter-spacing:1px" id="roster-note">
+    Fetching Discord avatars…
+  </p>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">Just Vibes</div>
+  <div class="footer-accent">◆</div>
+  <div class="footer-note">© 2026 Just Vibes. All rights reserved.</div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   CONFIG — edit this section only
+   ══════════════════════════════════════════════════════════ */
+
+// Your Cloudflare Worker URL (deploy cloudflare-worker.js first)
+const WORKER_URL = 'https://premier-pfp-sys.itsnielsje.workers.dev/';
+
+// Henrik Dev API for Premier stats
+const HENRIK_URL = 'https://api.henrikdev.xyz/valorant/v1/premier/Just%20Vibes/Vibes?api_key=HDEV-7271bd4f-5054-477c-bf2b-0267b3cfd4df';
+
+// Player roster — replace Discord IDs with your real ones
+const PLAYERS = [
+  {
+    id: '929521121475313804',
+    name: 'Rensora',
+    role: 'IGL / Fragger',
+    handle: '@FNC Rensora#AIM',
+    tag: 'Captain / Duelist'
+  },
+  {
+    id: '1229490318555222099',
+    name: 'Kjx Gaming',
+    role: 'Smokes / Flank Holder',
+    handle: '@FNC Kjxgaming#PRAY',
+    tag: 'Controller'
+  },
+  {
+    id: '1056576098542039122',
+    name: 'Zerox',
+    role: 'Fragger / Space Creator',
+    handle: '@Zerox CZ#Gohum',
+    tag: 'Duelist'
+  },
+  {
+    id: '779961273289932820',
+    name: 'Tenno',
+    role: 'Info Gatherer / Secondary Lurker',
+    handle: '@Tenno禅#3110',
+    tag: 'Initiator'
+  },
+  {
+    id: '689399618601091109',
+    name: 'Nelson',
+    role: 'Flank Anchor / Post-plant Holder',
+    handle: '@NWERROR404#404',
+    tag: 'Sentinel'
+  },
+];
+
+/* ══════════════════════════════════════════════════════════
+   LOADER
+   ══════════════════════════════════════════════════════════ */
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loader').classList.add('hidden'), 2000);
+});
+
+/* ══════════════════════════════════════════════════════════
+   HENRIK API — Premier stats + matches
+   ══════════════════════════════════════════════════════════ */
+async function loadPremierData() {
+  try {
+    const res  = await fetch(HENRIK_URL);
+    const json = await res.json();
+    if (json.status !== 200) throw new Error('API error');
+    const d = json.data;
+
+    // ── Standing summary ──────────────────────────────────
+    document.getElementById('st-points').textContent  = d.placement.points;
+    document.getElementById('st-place').textContent   = '#' + d.placement.place;
+    document.getElementById('st-wins').textContent    = d.stats.wins;
+    document.getElementById('st-losses').textContent  = d.stats.losses;
+    document.getElementById('st-rw').textContent      = d.stats.rounds_won;
+    document.getElementById('st-rl').textContent      = d.stats.rounds_lost;
+
+    // ── About stats block ────────────────────────────────
+    const boxes = document.querySelectorAll('#aboutStats .stat-box');
+    if (boxes[0]) { boxes[0].querySelector('.stat-num').textContent = d.stats.wins;            boxes[0].querySelector('.stat-label').textContent = 'Wins'; }
+    if (boxes[1]) { boxes[1].querySelector('.stat-num').textContent = d.stats.losses;          boxes[1].querySelector('.stat-label').textContent = 'Losses'; }
+    if (boxes[2]) { boxes[2].querySelector('.stat-num').textContent = d.placement.points + 'p'; boxes[2].querySelector('.stat-label').textContent = 'Points'; }
+
+    // ── Match cards ───────────────────────────────────────
+    const grid = document.getElementById('matchesGrid');
+    const note = document.getElementById('matches-note');
+
+    // Henrik's v1 endpoint doesn't return per-match history in this call.
+    // We build one summary card from the aggregate stats.
+    const totalMatches = d.stats.matches ?? (d.stats.wins + d.stats.losses);
+    const wr = totalMatches > 0 ? Math.round((d.stats.wins / totalMatches) * 100) : 0;
+
+    note.remove();
+
+    // Season overview card
+    grid.innerHTML = `
+      <div class="match-card ${d.stats.wins >= d.stats.losses ? 'win' : 'loss'} reveal">
+        <div class="match-result-badge">${d.stats.wins}W – ${d.stats.losses}L</div>
+        <div class="match-map">Season Overview</div>
+        <div class="match-score">Win Rate: ${wr}%</div>
+        <div class="match-date">EU DACH · Division ${d.placement.division} · Place #${d.placement.place}</div>
+      </div>
+      <div class="match-card draw reveal">
+        <div class="match-result-badge">ROUNDS</div>
+        <div class="match-map">Round Stats</div>
+        <div class="match-score">${d.stats.rounds_won}W / ${d.stats.rounds_lost}L</div>
+        <div class="match-date">Across ${totalMatches} Premier match${totalMatches !== 1 ? 'es' : ''}</div>
+      </div>
+      <div class="match-card reveal">
+        <div class="match-result-badge" style="background:rgba(255,107,0,0.15);color:var(--orange)">STANDING</div>
+        <div class="match-map">Conference Rank</div>
+        <div class="match-score">#${d.placement.place} in EU DACH</div>
+        <div class="match-date">${d.placement.points} Premier Points</div>
+      </div>
+    `;
+
+    observeReveal();
+  } catch (e) {
+    document.getElementById('matches-note').textContent =
+      'Could not load match data. Check the API key or try again later.';
+    console.warn('Premier API error:', e);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   ROSTER — Discord avatars via Cloudflare Worker
+   ══════════════════════════════════════════════════════════ */
+const grid = document.getElementById('rosterGrid');
+const rosterNote = document.getElementById('roster-note');
+
+function buildCard(player, avatarUrl) {
+  const initials = player.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+  const num = String(PLAYERS.indexOf(player) + 1).padStart(2, '0');
+  return `
+    <div class="player-card reveal">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div style="position:relative">
+          <div class="avatar-wrap">
+            ${avatarUrl
+              ? `<img src="${avatarUrl}" alt="${player.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+              : ''}
+            <div class="avatar-placeholder" style="${avatarUrl ? 'display:none' : 'display:flex'}">${initials}</div>
+          </div>
+          <div class="avatar-ring"></div>
+        </div>
+        <div class="player-name">${player.name}</div>
+        <div class="player-role">${player.role}</div>
+        <div class="player-handle">${player.handle}</div>
+        <div class="player-tag">${player.tag}</div>
+      </div>
+      <div class="player-number">${num}</div>
+    </div>`;
+}
+
+async function loadRoster() {
+  // Render skeleton cards immediately
+  PLAYERS.forEach(p => {
+    const div = document.createElement('div');
+    div.innerHTML = buildCard(p, null);
+    grid.appendChild(div.firstElementChild);
+  });
+
+  // Fetch Discord avatars from Worker
+  try {
+    const ids = PLAYERS.map(p => p.id).join(',');
+    const res  = await fetch(`${WORKER_URL}/avatars?ids=${ids}`);
+    if (!res.ok) throw new Error('Worker response not OK');
+    const data = await res.json(); // { "discord_id": "avatar_url" }
+
+    const cards = grid.querySelectorAll('.player-card');
+    PLAYERS.forEach((player, i) => {
+      const url = data[player.id];
+      if (!url) return;
+      const wrap = cards[i].querySelector('.avatar-wrap');
+      let img = wrap.querySelector('img');
+      if (!img) {
+        img = document.createElement('img');
+        img.alt = player.name;
+        wrap.prepend(img);
+      }
+      img.src = url;
+      img.style.display = 'block';
+      const ph = wrap.querySelector('.avatar-placeholder');
+      if (ph) ph.style.display = 'none';
+    });
+
+    rosterNote.textContent = '';
+  } catch (e) {
+    rosterNote.textContent =
+      'Avatar Worker not connected — showing initials. Deploy cloudflare-worker.js first.';
+    console.warn('Discord avatar fetch failed:', e);
+  }
+
+  observeReveal();
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCROLL REVEAL
+   ══════════════════════════════════════════════════════════ */
+function observeReveal() {
+  const els = document.querySelectorAll('.reveal:not(.visible)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+}
+
+/* ══════════════════════════════════════════════════════════
+   INIT
+   ══════════════════════════════════════════════════════════ */
+loadPremierData();
+loadRoster();
+observeReveal();
+</script>
+</body>
+</html>
